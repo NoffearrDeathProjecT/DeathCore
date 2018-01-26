@@ -22,12 +22,12 @@ Windows, Linux and macOS.
 
 ## Reporting issues
 
-Please report bugs using [BitBucket issue tracker](https://github.com/NoffearrDeathProjecT/DeathCore/issues).
+Please report bugs using [GitHub issue tracker](https://github.com/NoffearrDeathProjecT/DeathCore/issues).
 
 
 ## Submitting fixes
 
-Please send corrections/fixes using [BitBucket pull requests](https://github.com/NoffearrDeathProjecT/DeathCore/pulls).
+Please send corrections/fixes using [GitHub pull requests](https://github.com/NoffearrDeathProjecT/DeathCore/pulls).
 
 
 ## Copyright
