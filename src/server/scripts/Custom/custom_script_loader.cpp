@@ -31,6 +31,7 @@ void AddSC_REFORGER_NPC();
 void AddSC_transmogriefer();
 void AddSC_TemplateNPC();
 void AddSC_npc_trainer_master();
+void AddSC_Npc_Beastmaster();
 void AddSC_Transmogrification();
 void AddSC_NPC_TransmogDisplayVendor();
 void AddSC_VIP_NPC();
@@ -62,6 +63,7 @@ void AddCustomScripts()
     AddSC_transmogriefer();
 	AddSC_TemplateNPC();
     AddSC_npc_trainer_master();
+	AddSC_Npc_Beastmaster();
     AddSC_Transmogrification();
     AddSC_NPC_TransmogDisplayVendor();
     AddSC_VIP_NPC();
