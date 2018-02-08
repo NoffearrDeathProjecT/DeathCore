@@ -97,6 +97,7 @@
 #include "WorldPacket.h"
 #include "WorldSession.h"
 #include "VipSystem.h"
+#include "Config.h"
 
 #define ZONE_UPDATE_INTERVAL (1*IN_MILLISECONDS)
 
@@ -271,6 +272,12 @@ Player::Player(WorldSession* session): Unit(true)
         m_bgBattlegroundQueueID[j].bgQueueTypeId = BATTLEGROUND_QUEUE_NONE;
         m_bgBattlegroundQueueID[j].invitedToInstance = 0;
     }
+
+	// PlayedTimeReward
+    ptr_Interval = sConfigMgr->GetIntDefault("PlayedTimeReward.Interval", 0);
+    ptr_Money = sConfigMgr->GetIntDefault("PlayedTimeReward.Money", 0);
+    ptr_Honor = sConfigMgr->GetIntDefault("PlayedTimeReward.Honor", 0);
+    ptr_Arena = sConfigMgr->GetIntDefault("PlayedTimeReward.Arena", 0);
 
     m_logintime = GameTime::GetGameTime();
     m_Last_tick = m_logintime;
@@ -1108,6 +1115,21 @@ void Player::Update(uint32 p_time)
         stmt->setString(2, "");
         stmt->setUInt32(3, GetSession()->GetAccountId());
         LoginDatabase.Execute(stmt);
+    }
+
+	// PlayedTimeReward
+    if (ptr_Interval > 0)
+    {
+        if (ptr_Interval <= p_time)
+        {
+            GetSession()->SendAreaTriggerMessage("Bonus adicionado por tempo Online.");
+            ModifyMoney(ptr_Money);
+            ModifyHonorPoints(ptr_Honor);
+            ModifyArenaPoints(ptr_Arena);
+            ptr_Interval = sConfigMgr->GetIntDefault("PlayedTimeReward.Interval", 0);
+        }
+        else
+            ptr_Interval -= p_time;
     }
 
     if (!m_timedquests.empty())

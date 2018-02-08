@@ -17,7 +17,7 @@ if(NOT BUILDDIR)
 endif()
 
 if(WITHOUT_GIT)
-  set(rev_date "30-01-2018 17:50:00 +3.3.5a")
+  set(rev_date "08-02-2018 17:50:00 +3.3.5a")
   set(rev_hash "3.3.5a")
   set(rev_branch "Arquivado")
 else()
@@ -56,8 +56,8 @@ else()
     # No valid ways available to find/set the revision/hash, so let's force some defaults
     message(STATUS "
     Could not find a proper repository signature (hash) - you may need to pull tags with git fetch -t
-    Continuing anyway - note that the versionstring will be set to \"3.3.5a 30-01-2018 17:50:00 (Arquivado)\"")
-    set(rev_date "30-01-2018 17:50:00 +3.3.5a")
+    Continuing anyway - note that the versionstring will be set to \"3.3.5a 08-02-2018 17:50:00 (Arquivado)\"")
+    set(rev_date "08-02-2018 17:50:00 +3.3.5a")
     set(rev_hash "3.3.5a")
     set(rev_branch "Arquivado")
   else()
